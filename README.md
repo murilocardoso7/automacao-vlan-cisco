@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/murilocardoso7/automacao-vlan-cisco/blob/main/LICENSE)
+
 # Automação de VLANs Cisco em Python
 
 ## Visão Geral
