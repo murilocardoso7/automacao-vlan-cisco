@@ -53,4 +53,4 @@ Pode ser ampliado para suportar **SSH (Netmiko)**, **autenticação por chave**,
 
 ### 🧾 Licença
 
-Distribuído sob a licença **MIT**. Consulte o arqu
+Distribuído sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais informações.
