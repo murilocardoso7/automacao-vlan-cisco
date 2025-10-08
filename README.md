@@ -1,56 +1,94 @@
-# ⚙️ Automação de VLANs Cisco em Python
+# Automação de VLANs Cisco em Python
 
-## 💡 Visão Geral
+## Visão Geral
 
-Automação para criação e nomeação de VLANs em dispositivos **Cisco**, utilizando **Python (asyncio + telnetlib3)**.
-Projetado para operação em **EVE-NG**, **GNS3** ou infraestrutura real, com autenticação dinâmica e execução assíncrona de comandos.
+Este projeto demonstra a automação do provisionamento de VLANs em dispositivos **Cisco IOS**, utilizando **Python** com suporte assíncrono via `asyncio` e comunicação Telnet por meio da biblioteca `telnetlib3`.
+A solução foi estruturada para operação em ambientes **EVE-NG**, **GNS3** e infraestruturas Cisco reais, oferecendo um fluxo de automação confiável, reprodutível e tecnicamente escalável.
+Ideal para **laboratórios, ambientes de teste e aprendizado em automação de redes**, servindo como base para aplicações corporativas futuras.
 
-## 🎯 Objetivo
+---
 
-Reduzir tarefas manuais e padronizar configurações de VLANs, garantindo consistência, rapidez e rastreabilidade nas implementações de rede.
+## Objetivo
 
-## 🧩 Arquitetura Técnica
+Automatizar a configuração e nomeação de múltiplas VLANs em dispositivos Cisco, reduzindo o tempo de configuração manual e padronizando as operações de rede.
+A aplicação executa autenticação dinâmica, envia comandos IOS em sequência e exibe o resultado completo da configuração no terminal.
 
-* **Linguagem:** Python 3.8+
-* **Bibliotecas:** telnetlib3, asyncio, getpass
-* **Protocolo:** Telnet (porta 23)
-* **Fluxo:** conexão → autenticação → envio de comandos → leitura de resposta → encerramento seguro
+---
 
-## ⚙️ Requisitos
+## Arquitetura Técnica
 
-* Python 3.8 ou superior
-* Instalar dependências:
+**Script principal:** `script_telnet_config_vlan.py`
+
+**Fluxo de execução:**
+
+1. Estabelecimento da sessão Telnet.
+2. Autenticação automática (usuário e senha).
+3. Execução dos comandos IOS pré-definidos.
+4. Leitura e exibição assíncrona da resposta.
+5. Encerramento controlado da conexão.
+
+**Pilares técnicos:**
+
+* Programação assíncrona (async/await)
+* Automação de dispositivos Cisco IOS
+* Telnetlib3 para comunicação de baixo nível
+* Controle de sessão e sincronização via asyncio
+
+---
+
+## Requisitos
+
+* **Python:** 3.8 ou superior
+* **Dependências:**
 
   ```bash
   pip install telnetlib3
   ```
-* Dispositivo Cisco com Telnet ativo
+* **Ambiente:**
 
-## ▶️ Execução
+  * Dispositivo Cisco (real ou virtual)
+  * Porta Telnet (23) habilitada
+
+---
+
+## Execução
 
 ```bash
 git clone https://github.com/murilocardoso7/automacao-vlan-cisco.git
 cd automacao-vlan-cisco
-python main.py
+python script_telnet_config_vlan.py
 ```
 
-Informe credenciais quando solicitado.
-O sistema executará os comandos e exibirá os resultados em tempo real.
-
-## 🔍 Considerações Técnicas
-
-Script projetado com foco em **automação assíncrona**, **simplicidade de integração** e **extensibilidade**.
-Pode ser ampliado para suportar **SSH (Netmiko)**, **autenticação por chave**, ou integração com ferramentas como **Ansible** e **Nornir**.
-
-## 📈 Próximos Passos
-
-* Suporte a SSH e protocolos modernos.
-* Log automatizado de sessões.
-* Interface web para gerenciamento remoto.
-* Integração com pipelines CI/CD de rede.
+Durante a execução, o script solicita as credenciais, conecta-se ao equipamento e aplica automaticamente as VLANs 2 a 7, nomeando-as conforme padrão definido no código.
 
 ---
 
-### 🧾 Licença
+## Demonstração
 
-Distribuído sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais informações.
+Resultado obtido em ambiente Cisco EVE-NG, representando a execução real do script:
+
+<img width="575" height="394" alt="Image" src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" /> 
+
+
+---
+
+## Conhecimentos Demonstrados
+
+Este projeto evidencia competências práticas e conceituais em:
+
+* **Automação de redes Cisco IOS** via Python.
+* **Programação assíncrona** com `asyncio`.
+* **Gerenciamento de sessões Telnet** com `telnetlib3`.
+* **Estruturação de código limpa e modular.**
+* **Boas práticas em automação de infraestrutura.**
+* **Segurança e protocolos de gerenciamento de rede.**
+
+---
+
+## Possíveis Extensões
+
+* Migração do transporte Telnet para **SSH** (via `asyncssh` ou `netmiko`).
+* Implementação de **logs persistentes** e auditoria de comandos.
+* Integração com **Ansible**, **Nornir** ou pipelines CI/CD de rede.
+* Criação de **interface web** para gerenciamento remoto de VLANs.
+
