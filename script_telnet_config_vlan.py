@@ -48,7 +48,7 @@ async def main():
 
     for cmd in cmds:
         writer.write(cmd + "\n")
-        await asyncio.sleep(0.5)  # tempo para processar
+        await asyncio.sleep(0.5)
         output = await reader.read(4096)
         if output.strip():
             print(output.strip())
@@ -57,3 +57,4 @@ async def main():
     await writer.wait_closed()
 
 asyncio.run(main())
+
