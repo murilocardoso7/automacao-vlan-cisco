@@ -70,25 +70,3 @@ Resultado obtido em ambiente Cisco EVE-NG, representando a execução real do sc
 <img width="575" height="394" alt="Image" src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" /> 
 
 
----
-
-## Conhecimentos Demonstrados
-
-Este projeto evidencia competências práticas e conceituais em:
-
-* **Automação de redes Cisco IOS** via Python.
-* **Programação assíncrona** com `asyncio`.
-* **Gerenciamento de sessões Telnet** com `telnetlib3`.
-* **Estruturação de código limpa e modular.**
-* **Boas práticas em automação de infraestrutura.**
-* **Segurança e protocolos de gerenciamento de rede.**
-
----
-
-## Possíveis Extensões
-
-* Migração do transporte Telnet para **SSH** (via `asyncssh` ou `netmiko`).
-* Implementação de **logs persistentes** e auditoria de comandos.
-* Integração com **Ansible**, **Nornir** ou pipelines CI/CD de rede.
-* Criação de **interface web** para gerenciamento remoto de VLANs.
-
