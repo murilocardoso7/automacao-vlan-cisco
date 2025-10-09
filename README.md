@@ -5,8 +5,7 @@
 ## Visão Geral
 
 Este projeto demonstra a automação do provisionamento de VLANs em dispositivos **Cisco IOS**, utilizando **Python** com suporte assíncrono via `asyncio` e comunicação Telnet por meio da biblioteca `telnetlib3`.
-A solução foi estruturada para operação em ambientes **EVE-NG**, **GNS3** e infraestruturas Cisco reais, oferecendo um fluxo de automação confiável, reprodutível e tecnicamente escalável.
-Ideal para **laboratórios, ambientes de teste e aprendizado em automação de redes**, servindo como base para aplicações corporativas futuras.
+A solução foi estruturada para operação em ambientes **EVE-NG**, ideal para **laboratórios, ambientes de teste e aprendizado em automação de redes**, servindo como base para aplicações corporativas futuras.
 
 ---
 
