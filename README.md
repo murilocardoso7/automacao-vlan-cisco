@@ -17,10 +17,6 @@ A aplicação executa autenticação dinâmica, envia comandos IOS em sequência
 
 ---
 
-## Arquitetura Técnica
-
-**Script principal:** `script_telnet_config_vlan.py`
-
 **Fluxo de execução:**
 
 1. Estabelecimento da sessão Telnet.
