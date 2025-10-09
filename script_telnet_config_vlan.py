@@ -19,7 +19,7 @@ async def main():
     await reader.read_until(b">")
     writer.write(b"conf t\n")
 
-    for x in range(2, 9):  # VLANs de 2 a 8
+    for x in range(2, 8):
         writer.write(b"vlan " + str(x).encode('ascii') + b"\n")
         writer.write(b"name Python_VLAN_" + str(x).encode('ascii') + b"\n")
 
@@ -33,3 +33,4 @@ async def main():
     writer.close()
 
 asyncio.run(main())
+
