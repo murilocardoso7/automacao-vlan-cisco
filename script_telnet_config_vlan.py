@@ -2,59 +2,34 @@ import asyncio
 import getpass
 import telnetlib3
 
-HOST = "192.168.101.99"
-user = input("Enter your remote account (press Enter if none): ")
-password = getpass.getpass("Password: ")
+HOST = "192.168.101.90"
+user = input("Enter your remote account: ")
+password = getpass.getpass()
 
 async def main():
-    reader, writer = await telnetlib3.open_connection(HOST, port=23)
+    reader, writer = await telnetlib3.open_connection(HOST)
 
-    data = await reader.read(4096)
+    await reader.read_until(b"Username: ")
+    writer.write(user.encode('ascii') + b"\n")
+    
+    if password:
+        await reader.read_until(b"Password: ")
+        writer.write(password.encode('ascii') + b"\n")
 
-    # Detecta se há prompt de username
-    if "Username" in data or "User" in data:
-        writer.write(user + "\n")
-        await asyncio.sleep(0.3)
-        data = await reader.read(4096)
+    await reader.read_until(b">")
+    writer.write(b"conf t\n")
 
-    # Detecta se há prompt de senha
-    if "Password" in data:
-        writer.write(password + "\n")
-        await asyncio.sleep(0.3)
-        data = await reader.read(4096)
+    for x in range(2, 9):  # VLANs de 2 a 8
+        writer.write(b"vlan " + str(x).encode('ascii') + b"\n")
+        writer.write(b"name Python_VLAN_" + str(x).encode('ascii') + b"\n")
 
-    # Comandos Cisco
-    cmds = [
-        "enable",
-        "conf t",
-        "vlan 2",
-        "name Python_VLAN_2",
-        "vlan 3",
-        "name Python_VLAN_3",
-        "vlan 4",
-        "name Python_VLAN_4",
-        "vlan 5",
-        "name Python_VLAN_5",
-        "vlan 6",
-        "name Python_VLAN_6",
-        "vlan 7",
-        "name Python_VLAN_7",
-        "end",
-        "show vlan brief",
-        "exit"
-    ]
+    writer.write(b"end\n")
+    writer.write(b"wr\n")
+    writer.write(b"exit\n")
 
-    print("\n--- Executando comandos no roteador ---\n")
-
-    for cmd in cmds:
-        writer.write(cmd + "\n")
-        await asyncio.sleep(0.5)
-        output = await reader.read(4096)
-        if output.strip():
-            print(output.strip())
+    data = await reader.read()
+    print(data.decode('ascii'))
 
     writer.close()
-    await writer.wait_closed()
 
 asyncio.run(main())
-
