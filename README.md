@@ -2,7 +2,7 @@
 
 # Cisco VLAN Automation in Python
 
-> 🇧🇷 Leia este README em Português [aqui](README.md)
+> 🇧🇷 Leia este README em Português [aqui](README_pt.md)
 
 ## Overview
 
