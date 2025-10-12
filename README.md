@@ -1,54 +1,57 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/murilocardoso7/automacao-vlan-cisco/blob/main/LICENSE)
+[![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20PT--BR-blue.svg)](README_pt.md)
 
-# Automação de VLANs Cisco em Python
+# Cisco VLAN Automation in Python
 
-## Visão Geral
+> 🇧🇷 Leia este README em português [aqui](README_pt.md)
 
-Este projeto demonstra a automação do provisionamento de VLANs em dispositivos **Cisco IOS**, utilizando **Python** com suporte assíncrono via `asyncio` e comunicação Telnet por meio da biblioteca `telnetlib3`.
-A solução foi estruturada para operação em ambientes **EVE-NG**, ideal para **laboratórios, ambientes de teste e aprendizado em automação de redes**, servindo como base para aplicações corporativas futuras.
+## Overview
 
----
-
-## Objetivo
-
-Automatizar a configuração e nomeação de múltiplas VLANs em dispositivos Cisco, reduzindo o tempo de configuração manual e padronizando as operações de rede.
-A aplicação executa autenticação dinâmica, envia comandos IOS em sequência e exibe o resultado completo da configuração no terminal.
+This project demonstrates VLAN provisioning automation on **Cisco IOS** devices using **Python**, leveraging asynchronous support via `asyncio` and Telnet communication through the `telnetlib3` library.  
+It is designed for **EVE-NG environments**, ideal for **network automation labs, testing scenarios, and educational setups**, serving as a foundation for future enterprise automation applications.
 
 ---
 
-**Fluxo de execução:**
+## Objective
 
-1. Estabelecimento da sessão Telnet.
-2. Autenticação automática (usuário e senha).
-3. Execução dos comandos IOS pré-definidos.
-4. Leitura e exibição assíncrona da resposta.
-5. Encerramento controlado da conexão.
-
-**Pilares técnicos:**
-
-* Programação assíncrona (async/await)
-* Automação de dispositivos Cisco IOS
-* Telnetlib3 para comunicação de baixo nível
-* Controle de sessão e sincronização via asyncio
+To automate the configuration and naming of multiple VLANs on Cisco devices, minimizing manual work and ensuring standardized network operations.  
+The application performs dynamic authentication, sequentially sends IOS commands, and displays the complete configuration output in the terminal.
 
 ---
 
-## Requisitos
+### Execution Flow
 
-* **Python:** 3.8 ou superior
-* **Dependências:**
+1. Establish Telnet session  
+2. Automatic authentication (username and password)  
+3. Execution of predefined IOS commands  
+4. Asynchronous reading and output display  
+5. Controlled connection termination  
 
+---
+
+### Technical Pillars
+
+- Asynchronous programming (`async/await`)  
+- Cisco IOS device automation  
+- Low-level Telnet communication via `telnetlib3`  
+- Session control and synchronization with `asyncio`  
+
+---
+
+## Requirements
+
+- **Python:** 3.8 or higher  
+- **Dependencies:**
   ```bash
   pip install telnetlib3
   ```
-* **Ambiente:**
-
-  * Dispositivo Cisco (real ou virtual)
-  * Porta Telnet (23) habilitada
+- **Environment:**
+  - Cisco device (physical or virtual)  
+  - Telnet port (23) enabled  
 
 ---
 
-## Execução
+## Execution
 
 ```bash
 git clone https://github.com/murilocardoso7/automacao-vlan-cisco.git
@@ -56,14 +59,25 @@ cd automacao-vlan-cisco
 python script_telnet_config_vlan.py
 ```
 
-Durante a execução, o script solicita as credenciais, conecta-se ao equipamento e aplica automaticamente as VLANs 2 a 7, nomeando-as conforme padrão definido no código.
+During execution, the script requests credentials, connects to the device, and automatically applies VLANs 2 through 7, naming them according to the predefined standard in the code.
 
 ---
 
-## Demonstração
+## Demonstration
 
-Resultado obtido em ambiente Cisco EVE-NG, representando a execução real do script:
+Execution result from a Cisco EVE-NG lab, representing real device automation:
 
-<img width="575" height="394" alt="Image" src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" /> 
+<img width="575" height="394" alt="Image" src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" />
 
+---
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Author
+
+**Murilo Cardoso**  
+[GitHub](https://github.com/murilocardoso7)
