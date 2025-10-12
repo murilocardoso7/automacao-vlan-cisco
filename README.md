@@ -1,57 +1,54 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/murilocardoso7/automacao-vlan-cisco/blob/main/LICENSE)
-[![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20PT--BR-blue.svg)](README_pt.md)
 
 # Cisco VLAN Automation in Python
 
-> 🇧🇷 Leia este README em português [aqui](README_pt.md)
-
 ## Overview
 
-This project demonstrates VLAN provisioning automation on **Cisco IOS** devices using **Python**, leveraging asynchronous support via `asyncio` and Telnet communication through the `telnetlib3` library.  
-It is designed for **EVE-NG environments**, ideal for **network automation labs, testing scenarios, and educational setups**, serving as a foundation for future enterprise automation applications.
+This project demonstrates VLAN provisioning automation on **Cisco IOS** devices using **Python** with asynchronous support through `asyncio` and Telnet communication via the `telnetlib3` library.  
+The solution is designed for **EVE-NG** environments — ideal for **labs, testing, and learning network automation** — serving as a foundation for future enterprise applications.
 
 ---
 
-## Objective
+## Purpose
 
-To automate the configuration and naming of multiple VLANs on Cisco devices, minimizing manual work and ensuring standardized network operations.  
-The application performs dynamic authentication, sequentially sends IOS commands, and displays the complete configuration output in the terminal.
-
----
-
-### Execution Flow
-
-1. Establish Telnet session  
-2. Automatic authentication (username and password)  
-3. Execution of predefined IOS commands  
-4. Asynchronous reading and output display  
-5. Controlled connection termination  
+Automate the configuration and naming of multiple VLANs on Cisco devices, reducing manual setup time and standardizing network operations.  
+The application performs dynamic authentication, sends sequential IOS commands, and displays the full configuration result in the terminal.
 
 ---
 
-### Technical Pillars
+**Execution Flow:**
 
-- Asynchronous programming (`async/await`)  
-- Cisco IOS device automation  
-- Low-level Telnet communication via `telnetlib3`  
-- Session control and synchronization with `asyncio`  
+1. Establish Telnet session.  
+2. Automatic authentication (username and password).  
+3. Execute predefined IOS commands.  
+4. Asynchronously read and display responses.  
+5. Controlled connection termination.
+
+**Technical pillars:**
+
+* Asynchronous programming (async/await)  
+* Cisco IOS device automation  
+* Low-level communication with telnetlib3  
+* Session control and synchronization via asyncio
 
 ---
 
 ## Requirements
 
-- **Python:** 3.8 or higher  
-- **Dependencies:**
+* **Python:** 3.8 or higher  
+* **Dependencies:**
+
   ```bash
   pip install telnetlib3
   ```
-- **Environment:**
-  - Cisco device (physical or virtual)  
-  - Telnet port (23) enabled  
+* **Environment:**
+
+  * Cisco device (physical or virtual)  
+  * Telnet port (23) enabled
 
 ---
 
-## Execution
+## Usage
 
 ```bash
 git clone https://github.com/murilocardoso7/automacao-vlan-cisco.git
@@ -59,25 +56,20 @@ cd automacao-vlan-cisco
 python script_telnet_config_vlan.py
 ```
 
-During execution, the script requests credentials, connects to the device, and automatically applies VLANs 2 through 7, naming them according to the predefined standard in the code.
+During execution, the script prompts for credentials, connects to the device, and automatically applies VLANs 2 through 7, naming them according to the pattern defined in the code.
 
 ---
 
 ## Demonstration
 
-Execution result from a Cisco EVE-NG lab, representing real device automation:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" width="600">
+</p>
 
-<img width="575" height="394" alt="Image" src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" />
+**Figure 1 — Output of the `show vlan brief` command after running the Python automation script.**
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Author
-
-**Murilo Cardoso**  
-[GitHub](https://github.com/murilocardoso7)
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
