@@ -2,6 +2,8 @@
 
 # Cisco VLAN Automation in Python
 
+> 🇧🇷 Leia este README em Português [aqui](README.md)
+
 ## Overview
 
 This project demonstrates VLAN provisioning automation on **Cisco IOS** devices using **Python** with asynchronous support through `asyncio` and Telnet communication via the `telnetlib3` library.  
@@ -73,3 +75,10 @@ During execution, the script prompts for credentials, connects to the device, an
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## Author
+
+**Murilo Cardoso**  
+[GitHub](https://github.com/murilocardoso7)
