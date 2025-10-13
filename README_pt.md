@@ -51,8 +51,8 @@ A aplicação executa autenticação dinâmica, envia comandos IOS em sequência
 ## Execução
 
 ```bash
-git clone https://github.com/murilocardoso7/automacao-vlan-cisco.git
-cd automacao-vlan-cisco
+git clone https://github.com/murilocardoso7/cisco-vlan-automation.git
+cd cisco-vlan-automation
 python script_telnet_config_vlan.py
 ```
 
