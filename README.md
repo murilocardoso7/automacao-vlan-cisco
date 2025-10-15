@@ -1,8 +1,12 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/murilocardoso7/automacao-vlan-cisco/blob/main/LICENSE)
 
+<div align="center">
+  
 # Cisco VLAN Automation in Python
 
-> 🇧🇷 Leia este README em Português [aqui](README_pt.md)
+🇧🇷 [Leia em Português](README_pt.md)
+
+</div>
 
 ## Overview
 
