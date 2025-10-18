@@ -4,7 +4,6 @@
   
 # Cisco VLAN Automation in Python
 
-🇧🇷 [Leia em Português](README_pt.md)
 
 </div>
 
