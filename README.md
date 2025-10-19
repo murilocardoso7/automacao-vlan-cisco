@@ -1,5 +1,3 @@
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/murilocardoso7/automacao-vlan-cisco/blob/main/LICENSE)
-
 <div align="center">
   
 # Cisco VLAN Automation in Python
@@ -73,15 +71,3 @@ During execution, the script prompts for credentials, connects to the device, an
 
 **Figure 1 — Output of the `show vlan brief` command after running the Python automation script.**
 
----
-
-## License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## Author
-
-**Murilo Cardoso**  
-[GitHub](https://github.com/murilocardoso7)
