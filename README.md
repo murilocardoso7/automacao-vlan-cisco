@@ -1,73 +1,40 @@
-<div align="center">
-  
-# Cisco VLAN Automation in Python
+# Cisco VLAN Automation
 
+## Visão Geral
 
-</div>
+Script em **Python** para automatizar a **criação e nomeação de VLANs** em dispositivos **Cisco IOS**.  
+A comunicação é feita via **Telnet**, utilizando a biblioteca `telnetlib3` e o modelo assíncrono de execução do Python (`asyncio`).  
 
-## Overview
-
-This project demonstrates VLAN provisioning automation on **Cisco IOS** devices using **Python** with asynchronous support through `asyncio` and Telnet communication via the `telnetlib3` library.  
-The solution is designed for **EVE-NG** environments — ideal for **labs, testing, and learning network automation** — serving as a foundation for future enterprise applications.
+O código foi desenvolvido para **laboratórios virtuais ou físicos**, com o objetivo de demonstrar **conceitos práticos de automação de redes**.
 
 ---
 
-## Purpose
+## Objetivo
 
-Automate the configuration and naming of multiple VLANs on Cisco devices, reducing manual setup time and standardizing network operations.  
-The application performs dynamic authentication, sends sequential IOS commands, and displays the full configuration result in the terminal.
-
----
-
-**Execution Flow:**
-
-1. Establish Telnet session.  
-2. Automatic authentication (username and password).  
-3. Execute predefined IOS commands.  
-4. Asynchronously read and display responses.  
-5. Controlled connection termination.
-
-**Technical pillars:**
-
-* Asynchronous programming (async/await)  
-* Cisco IOS device automation  
-* Low-level communication with telnetlib3  
-* Session control and synchronization via asyncio
+Reduzir o tempo de configuração manual e garantir consistência na aplicação de comandos IOS, de forma simples e reproduzível em qualquer ambiente de emulação ou laboratório de rede.
 
 ---
 
-## Requirements
+## Tecnologias Utilizadas
 
-* **Python:** 3.8 or higher  
-* **Dependencies:**
-
-  ```bash
-  pip install telnetlib3
-  ```
-* **Environment:**
-
-  * Cisco device (physical or virtual)  
-  * Telnet port (23) enabled
+- **Python 3.8+**
+- **telnetlib3**
+- **asyncio**
+- **Cisco IOS (modo Telnet habilitado)**
 
 ---
 
-## Usage
+## Execução
 
 ```bash
 git clone https://github.com/murilocardoso7/cisco-vlan-automation.git
 cd cisco-vlan-automation
+pip install telnetlib3
 python script_telnet_config_vlan.py
+Durante a execução, o script solicitará credenciais, conectará ao dispositivo e aplicará as VLANs configuradas no código.
 ```
-
-During execution, the script prompts for credentials, connects to the device, and automatically applies VLANs 2 through 7, naming them according to the pattern defined in the code.
-
 ---
+Saída show vlan brief após execução do script.
 
-## Demonstration
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a3386567-4990-4dd2-bafd-b1a933d82210" width="600">
-</p>
-
-**Figure 1 — Output of the `show vlan brief` command after running the Python automation script.**
+![Show Vlan Brief Screenshot](https://github-production-user-asset-6210df.s3.amazonaws.com/216113104/498866691-a3386567-4990-4dd2-bafd-b1a933d82210.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T001041Z&X-Amz-Expires=300&X-Amz-Signature=ae502f305737d4ec3544f86995b70f261235500351aa451576661c1e3181e8de&X-Amz-SignedHeaders=host)
 
